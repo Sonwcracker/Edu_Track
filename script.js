@@ -15,13 +15,14 @@ function login() {
     .catch((error) => {
       document.getElementById("erroMsg").textContent = "Erro: " + error.message;
     });
+}
 
-    function logout() {
+// ✅ Essa função agora está fora da função login()
+function logout() {
   firebase.auth().signOut().then(() => {
+    // Redireciona para a página de login
     window.location.href = "../index.html";
   }).catch((error) => {
     console.error("Erro ao sair:", error);
   });
-}
-
 }

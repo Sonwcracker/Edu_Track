@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mural da Turma</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style-mural.css">
+  <link rel="stylesheet" href="style-navbar.css">
+  <link rel="stylesheet" href="style-tabs.css">
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+  <!-- Scripts -->
+  <script src="../firebase-config.js" defer></script>
+  <script src="script-tabs.js" defer></script>
+  <script src="script-mural.js" defer></script>
+  <script src="../script.js" defer></script>
+  <script src="script-navbar.js" defer></script>
+</head>
+<body>
+  <!-- NAVBAR SUPERIOR -->
+  <div id="navbar-top"></div>
+
+  <div class="dashboard">
+    <!-- NAVBAR LATERAL -->
+    <div id="navbar-lateral"></div>
+
+    <!-- CONTEÚDO -->
+    <main class="conteudo">
+      <!-- ABAS -->
+      <div id="tabs-container"></div>
+
+      <!-- BANNER DA TURMA -->
+      <div class="mural-banner">
+        <div class="banner-texto">
+          <h1 id="titulo-mural">Mural da Turma</h1>
+          <p>Fique por dentro dos avisos e comunicados importantes.</p>
+        </div>
+        <img src="../img/work.jpg" alt="Banner" class="banner-img">
+      </div>
+
+      <!-- FORMULÁRIO DE NOVO AVISO -->
+      <div class="card-publicar">
+        <h3>Novo aviso</h3>
+        <form id="form-mural" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <input type="text" id="titulo" placeholder="Título do aviso" required>
+          <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+          <button type="submit">Publicar Aviso</button>
+        </form>
+      </div>
+
+      <!-- AVISOS -->
+      <div id="avisos-container"></div>
+    </main>
+  </div>
+</body>
+</html>

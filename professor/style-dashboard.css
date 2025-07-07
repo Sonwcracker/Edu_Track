@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset básico e estrutura geral */
 * {
   margin: 0;
   padding: 0;
@@ -6,74 +6,30 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-body {
+.card-imagem {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+html, body {
+  height: 100%;
   background-color: #f5f6fa;
   color: #333;
 }
 
-/* Estrutura principal */
 .dashboard {
   display: flex;
-  min-height: 100vh;
+  height: 100%;
 }
 
-/* Sidebar lateral esquerda */
-.sidebar {
-  width: 240px;
-  background-color: #0d1b2a;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.sidebar h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.sidebar p#nome-professor {
-  font-size: 16px;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar ul li {
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-.sidebar ul li:hover {
-  background-color: #1b263b;
-}
-
-.logout-btn {
-  background-color: #e63946;
-  border: none;
-  color: white;
-  padding: 10px;
-  margin-top: 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.logout-btn:hover {
-  background-color: #d62828;
-}
-
-/* Conteúdo à direita */
+/* Conteúdo principal */
 .conteudo {
   flex: 1;
   padding: 40px;
+  overflow-y: auto;
 }
 
 .conteudo h2 {
@@ -81,8 +37,8 @@ body {
   margin-bottom: 20px;
 }
 
-/* Cards de turmas */
-.turmas-container {
+/* Cards das turmas */
+#turmas-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -91,14 +47,19 @@ body {
 .card-turma {
   background-color: white;
   padding: 20px;
-  width: 240px;
+  width: 300px; /* Aumentado de 240px para 300px */
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza conteúdo */
+  text-align: center;  /* Garante centralização do texto */
 }
 
 .card-turma:hover {
-  transform: translateY(-4px);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card-turma h3 {
@@ -123,15 +84,34 @@ body {
   transition: background 0.3s;
 }
 
-.card-turma {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-turma:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 .card-turma button:hover {
   background-color: #1d3557;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  font-weight: bold;
+}
+
+.tab-button.active {
+  background-color: #468ef9;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
 }

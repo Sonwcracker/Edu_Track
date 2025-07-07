@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>EduTrack - Dashboard Professor</title>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Turmas</title>
   <link rel="stylesheet" href="style-dashboard.css">
+  <link rel="stylesheet" href="style-navbar.css">
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
 
-  <!-- Configuração Firebase -->
   <script src="../firebase-config.js" defer></script>
-<script src="script-dashboard.js" defer></script>
+  <script src="script-dashboard.js" defer></script>
+  <script src="../script.js" defer></script>
+  <script src="script-navbar.js" defer></script>
 </head>
 <body>
-  <div class="dashboard">
-    <!-- Menu lateral -->
-    <aside class="sidebar">
-      <h2>EduTrack</h2>
-      <p id="nome-professor">Professor</p>
-      <nav>
-        <ul>
-          <li>Início</li>
-          <li>Turmas</li>
-          <li>Notas</li>
-          <li>Faltas</li>
-          <li>Relatórios</li>
-        </ul>
-      </nav>
-      <button onclick="logout()" class="logout-btn">Sair</button>
-    </aside>
+  <!-- NAVBAR TOP -->
+  <div id="navbar-top"></div>
 
-    <!-- Conteúdo principal -->
+  <div class="dashboard">
+    <!-- NAVBAR LATERAL -->
+    <div id="navbar-lateral"></div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo">
-      <h2>Minhas Turmas</h2>
-      <div id="turmas-container" class="turmas-container">
-        <!-- Turmas serão inseridas aqui dinamicamente -->
-      </div>
+      <h2>Turmas</h2>
+      <div id="turmas-container" class="turmas-container"></div>
     </main>
   </div>
 </body>

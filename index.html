@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EduTrack - Login</title>
 
   <!-- Firebase SDK compat -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
 
-  <!-- Seu arquivo de configuração do Firebase -->
+  <!-- Configuração do Firebase -->
   <script src="firebase-config.js" defer></script>
 
-  <!-- Script com a função login() -->
+  <!-- Script de login -->
   <script src="script.js" defer></script>
 
-  <!-- Estilos (opcional) -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="login-container">
     <h2>EduTrack</h2>
-    <input type="email" id="email" placeholder="E-mail">
-    <input type="password" id="senha" placeholder="Senha">
     
-    <select id="perfil" title="Selecione o perfil">
+    <input type="email" id="email" placeholder="E-mail" />
+    <input type="password" id="senha" placeholder="Senha" />
+
+    <select id="perfil">
       <option value="professor">Professor</option>
       <option value="responsavel">Responsável</option>
     </select>
 
     <button onclick="login()">Entrar</button>
+
     <p id="erroMsg"></p>
+
+    <!-- Link para tela de cadastro -->
+    <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
   </div>
 </body>
 </html>

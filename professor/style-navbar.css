@@ -1,0 +1,107 @@
+/* 🔹 Navbar TOP */
+.top-navbar {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.top-navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top-navbar .turma-info {
+  text-align: right;
+}
+
+.top-navbar .turma-info h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.top-navbar .turma-info p {
+  font-size: 14px;
+  margin: 0;
+  color: #555;
+}
+
+
+/* 🔹 Navbar LATERAL */
+.sidebar {
+  width: 240px;
+  height: calc(100vh - 60px); /* desconta altura do topo */
+  background-color: #0d1b2a;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 60px; /* começa depois do topo */
+  left: 0;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sidebar p#nome-professor {
+  font-size: 16px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li:hover {
+  background-color: #1b263b;
+}
+
+.logout-btn {
+  background-color: #e63946;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #d62828;
+}
+
+
+/* 🔹 Conteúdo principal */
+.dashboard {
+  display: flex;
+  margin-top: 60px; /* espaço para navbar-top */
+}
+
+.conteudo {
+  margin-left: 240px; /* espaço para sidebar */
+  padding: 40px;
+  flex: 1;
+  overflow-y: auto;
+}

@@ -1,3 +1,30 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+/* Layout principal */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Conteúdo ao lado da navbar */
+.conteudo {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
 /* Seção de alunos */
 #titulo-turma {
   font-size: 24px;
@@ -8,9 +35,9 @@
 #lista-alunos {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 #lista-alunos li {

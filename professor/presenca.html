@@ -2,43 +2,51 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Alunos da Turma</title>
+  <title>Lançar Faltas</title>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style-alunos.css">
+  <link rel="stylesheet" href="style-presenca.css">
   <link rel="stylesheet" href="style-navbar.css">
   <link rel="stylesheet" href="style-tabs.css">
 
-  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
 
-  <!-- Scripts -->
   <script src="../firebase-config.js" defer></script>
   <script src="script-tabs.js" defer></script>
-  <script src="script-alunos.js" defer></script>
+  <script src="script-presenca.js" defer></script>
   <script src="../script.js" defer></script>
   <script src="script-navbar.js" defer></script>
 </head>
 <body>
-  <!-- NAVBAR SUPERIOR -->
   <div id="navbar-top"></div>
-
   <div class="dashboard">
-    <!-- NAVBAR LATERAL -->
     <div id="navbar-lateral"></div>
-
-    <!-- CONTEÚDO PRINCIPAL -->
     <main class="conteudo">
-      <!-- ABAS (injetadas dinamicamente via JS) -->
       <div id="tabs-container"></div>
 
-      <!-- TÍTULO -->
-      <h2 id="titulo-turma">Alunos da Turma:</h2>
+      <h2>LANÇAR FALTAS</h2>
+      <p id="info-turma">Turma X <br> Prof. Nome</p>
 
-      <!-- LISTA DE ALUNOS -->
-      <ul id="lista-alunos"></ul>
+      <h3 style="margin-top: 40px;">Histórico de Semanas Anteriores</h3>
+      <div id="historico-semanas"></div>
+
+      <form id="form-presenca">
+        <table>
+          <thead>
+            <tr>
+              <th>Aluno</th>
+              <th>Seg</th>
+              <th>Ter</th>
+              <th>Qua</th>
+              <th>Qui</th>
+              <th>Sex</th>
+            </tr>
+          </thead>
+          <tbody id="lista-presenca"></tbody>
+        </table>
+        <button type="submit">Salvar</button>
+      </form>
     </main>
   </div>
 </body>
