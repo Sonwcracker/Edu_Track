@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduTrack - Responsável</title>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Configuração e Script -->
+  <script src="../firebase-config.js" defer></script>
+  <script src="dashboard-responsavel.js" defer></script>
+
+  <!-- Estilo -->
+  <link rel="stylesheet" href="style-responsavel.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- NAVBAR lateral -->
+    <aside class="sidebar">
+      <h2>EduTrack</h2>
+      <nav>
+        <ul>
+          <li id="link-inicio">Início</li>
+          <li id="link-presenca">Presença</li>
+          <li id="link-mural">Mural de Avisos</li>
+          <li id="link-msg">Mensagens</li>
+        </ul>
+      </nav>
+      <button class="logout-btn">Sair</button>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="conteudo">
+      <h1>Bem-vindo!</h1>
+
+       <div class="resumo-card">
+          <h3>Últimos Avisos</h3>
+          <div id="avisos-lista" class="avisos-container">
+            <p>Carregando avisos...</p>
+          </div>
+      </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

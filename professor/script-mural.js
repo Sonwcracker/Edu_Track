@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const auth = firebase.auth();
 
   // Carrega as NAVBARs
-  fetch("navbar.html")
+fetch("navbar.html")
     .then(res => res.text())
     .then(html => document.getElementById("navbar-lateral").innerHTML = html);
   fetch("navbar-top.html")

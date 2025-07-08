@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f5f6fa;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background: #0B0C2A;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #1a1c40;
+}
+
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px;
+  background: #e74c3c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.conteudo {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.info-aluno {
+  display: flex;
+  gap: 40px;
+}
+
+.aluno-card, .professor-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.aluno-card img, .professor-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.resumos {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.resumo-card {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ddd;
+}
+
+.avisos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.aviso-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.aviso-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.aviso-conteudo {
+  flex-grow: 1;
+}
+
+.aviso-conteudo h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.aviso-conteudo p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.avisos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.aviso-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.aviso-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.aviso-conteudo {
+  flex-grow: 1;
+}
+
+.aviso-conteudo h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.aviso-conteudo p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}

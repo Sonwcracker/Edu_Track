@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduTrack - Presença do Aluno</title>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Configuração e Script -->
+  <script src="../firebase-config.js" defer></script>
+  <script src="responsavel-aluno.js" defer></script>
+
+  <!-- Estilo -->
+  <link rel="stylesheet" href="style-responsavel.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- NAVBAR lateral -->
+    <aside class="sidebar">
+      <h2>EduTrack</h2>
+      <nav>
+        <ul>
+          <li id="link-inicio">Início</li>
+          <li id="link-presenca">Presença</li>
+          <li id="link-mural">Mural de Avisos</li>
+          <li id="link-msg">Mensagens</li>
+        </ul>
+      </nav>
+      <button class="logout-btn">Sair</button>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="conteudo">
+      <h1>Resumo de Presença</h1>
+
+      <div class="info-aluno">
+        <div class="aluno-card">
+          <img src="../img/avatar-feminino.png" alt="Avatar Aluno" />
+          <h2 id="nome-aluno">Nome do Aluno</h2>
+          <p id="turma-aluno">Turma</p>
+        </div>
+
+        <div class="resumo-card">
+          <h3>Resumo Semanal</h3>
+          <p><strong>Presença:</strong></p>
+          <p id="resumo-presenca">-- de -- dias</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

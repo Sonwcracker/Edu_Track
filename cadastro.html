@@ -16,12 +16,13 @@
   <!-- Script de cadastro -->
   <script src="cadastro.js" defer></script>
 
-  <!-- Estilo (opcional) -->
+  <!-- Estilo -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="login-container">
     <h2>Criar Conta - EduTrack</h2>
+
     <input type="text" id="nome" placeholder="Nome completo" required />
     <input type="email" id="email" placeholder="E-mail" required />
     <input type="password" id="senha" placeholder="Senha" required />
@@ -31,10 +32,23 @@
       <option value="responsavel">Responsável</option>
     </select>
 
+    <!-- Campos específicos para responsável -->
+    <input type="text" id="alunoId" placeholder="ID do Aluno" style="display:none;" />
+    <input type="text" id="turmaId" placeholder="Turma (ex: 7d)" style="display:none;" />
+
     <button onclick="cadastrar()">Cadastrar</button>
     <p id="mensagemErro"></p>
 
     <p>Já tem uma conta? <a href="index.html">Fazer login</a></p>
   </div>
+
+  <!-- Script para mostrar/esconder campos -->
+  <script>
+    document.getElementById("perfil").addEventListener("change", function () {
+      const isResp = this.value === "responsavel";
+      document.getElementById("alunoId").style.display = isResp ? "block" : "none";
+      document.getElementById("turmaId").style.display = isResp ? "block" : "none";
+    });
+  </script>
 </body>
 </html>
