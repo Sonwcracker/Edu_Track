@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset e base */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,6 @@ html, body {
 
 .dashboard {
   display: flex;
-  flex-direction: row;
   height: 100vh;
 }
 
@@ -22,7 +21,6 @@ html, body {
   width: 220px;
   background-color: #0B0C2A;
   color: white;
-  height: 100%;
   flex-shrink: 0;
 }
 
@@ -30,40 +28,9 @@ main.conteudo {
   flex: 1;
   padding: 30px 40px;
   overflow-y: auto;
-  background-color: #f5f6fa;
 }
 
-/* Abas */
-#tabs-container {
-  margin-bottom: 30px;
-}
-
-.tabs {
-  display: flex;
-  gap: 20px;
-  border-bottom: 2px solid #ddd;
-  margin-bottom: 10px;
-}
-
-.tab-link {
-  padding: 12px 20px;
-  font-size: 16px;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 3px solid transparent;
-  font-weight: 500;
-}
-
-.tab-link:hover {
-  color: #468ef9;
-}
-
-.tab-link.active {
-  color: #468ef9;
-  border-bottom: 3px solid #468ef9;
-}
-
-/* Banner da turma */
+/* Banner */
 .mural-banner {
   background-color: #27D3C7;
   color: white;
@@ -89,74 +56,261 @@ main.conteudo {
   max-width: 100%;
 }
 
-/* Card de publicação */
+/* Card de novo aviso */
 .card-publicar {
-  background: #fff;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: white;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
 }
 
-.card-publicar h3 {
-  margin-bottom: 12px;
-  font-size: 20px;
-}
-
-#form-mural {
+/* Cabeçalho recolhido do formulário */
+.aviso-fechado {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background 0.3s;
 }
 
-#form-mural input,
-#form-mural textarea {
-  padding: 10px;
+.aviso-fechado:hover {
+  background-color: #eaeaea;
+}
+
+.avatar-professor {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.aviso-fechado span {
+  font-size: 16px;
+  color: #555;
+  flex-grow: 1;
+}
+
+.icone-expandir {
+  font-size: 20px;
+  color: #999;
+}
+
+/* Formulário expandido */
+.formulario-expandido {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  animation: fadeIn 0.4s ease;
+}
+
+.formulario-expandido input,
+.formulario-expandido textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #f0f0f0;
   font-size: 15px;
+  transition: all 0.3s ease;
+  resize: vertical;
 }
 
-#form-mural input {
-  flex: 1;
-  min-width: 300px;
+.formulario-expandido input {
+  height: 45px;
 }
 
-#form-mural textarea {
-  flex: 2;
-  min-height: 60px;
-  min-width: 300px;
+.formulario-expandido textarea {
+  min-height: 120px;
 }
 
-#form-mural button {
-  padding: 10px 20px;
+.formulario-expandido input:focus,
+.formulario-expandido textarea:focus {
+  background-color: #eaeaea;
+  border-color: #468ef9;
+  outline: none;
+}
+
+/* Botões do formulário */
+.acoes-formulario {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.acoes-formulario button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#acoes-formulario #cancelar {
+  background: transparent;
+  color: #333;
+}
+
+.btn-publicar {
   background-color: #468ef9;
   color: white;
+}
+
+.btn-publicar:hover {
+  background-color: #2f76e5;
+}
+
+/* Container dos avisos */
+#avisos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estrutura do aviso postado - estilo Google Classroom */
+.aviso {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cabeçalho do aviso */
+.cabecalho-aviso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-postagem {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.info-professor {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #333;
+}
+
+.info-professor strong {
+  font-weight: 600;
+}
+
+.info-professor small {
+  font-size: 12px;
+  color: #777;
+}
+
+.menu-acao {
+  font-size: 22px;
+  color: #888;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Texto da mensagem */
+.mensagem-aviso {
+  font-size: 15px;
+  color: #444;
+  margin-top: -4px;
+  margin-bottom: 4px;
+  padding-left: 52px;
+}
+
+/* Comentário abaixo */
+.comentario-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #ddd;
+  padding: 12px 12px 0 52px;
+  margin-top: 8px;
+}
+
+.avatar-comentario {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comentario-box input {
+  flex: 1;
   border: none;
-  border-radius: 5px;
+  background-color: #f1f3f4;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  outline: none;
+}
+
+.btn-enviar-comentario {
+  background: none;
+  border: none;
+  color: #757575;
+  font-size: 18px;
   cursor: pointer;
 }
 
-/* Aviso individual */
-.aviso {
-  background: #fff;
-  border-radius: 8px;
-  padding: 18px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  max-width: 700px;
+/* Animação suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.aviso h3 {
-  margin-bottom: 6px;
+.linha-divisoria {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 16px 0 0 52px;
+}
+
+.menu-comentario {
+  position: relative;
+}
+
+.btn-mais {
+  cursor: pointer;
+  padding: 4px;
   font-size: 18px;
 }
 
-.aviso p {
-  margin-bottom: 4px;
+.menu-opcoes {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
 }
 
-.aviso small {
-  font-size: 12px;
-  color: #666;
+.menu-opcoes button {
+  padding: 6px 12px;
+  width: 100%;
+  border: none;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-opcoes button:hover {
+  background: #f2f2f2;
 }
